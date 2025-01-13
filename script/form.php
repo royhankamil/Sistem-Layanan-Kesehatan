@@ -16,33 +16,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $password);
+        // Periksa apakah username sudah ada
+        $stmt = $conn->prepare("SELECT username FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows > 0) {
+            // echo 
+            $message = "Username telah terpakai, gunakan username yang lain.";
+        } else {
+            $stmt->close();
+            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            $stmt->bind_param("ss", $username, $password);
+            $stmt->execute();
+            // echo 
+            "Registrasi Berhasil!";
+        }
         $stmt->close();
 
-        echo "Registration successful!";
     } elseif (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        // Periksa apakah username ada
         $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
-        $stmt->bind_result($hashed_password);
-        $stmt->fetch();
-        $stmt->close();
+        $stmt->store_result();
 
-        if (password_verify($password, $hashed_password)) {
-            $_SESSION['username'] = $username;
-            echo "Login successful!";
+        if ($stmt->num_rows == 0) {
+            echo "Maaf, user tidak ditemukan.";
         } else {
-            
-            echo "Invalid username or password!";
+            $stmt->bind_result($hashed_password);
+            $stmt->fetch();
+
+            // Periksa password
+            if (password_verify($password, $hashed_password)) {
+                $_SESSION['username'] = $username;
+                echo "Login Berhasil!";
+            } else {
+                echo "Maaf, password Anda salah.";
+            }
         }
+        $stmt->close();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -70,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" id="password" name="password" required>
         <br>
         <button type="submit" name="login">Login</button>
+        <div class="error_message"></div>
     </form>
 </body>
 </html>
