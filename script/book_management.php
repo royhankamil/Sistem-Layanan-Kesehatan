@@ -19,14 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $publisher = $_POST['publisher'];
         $author = $_POST['author'];
 
-        // Cek duplikasi title-author
+        // Cek apakah kombinasi title-author sudah ada
         $check_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ?");
         $check_stmt->bind_param("ss", $title, $author);
         $check_stmt->execute();
-        $check_result = $check_stmt->get_result();
+        $check_stmt->store_result();
 
-        if ($check_result->num_rows > 0) {
-            echo "Error: Buku dengan kombinasi title dan author yang sama sudah ada!";
+        if ($check_stmt->num_rows > 0) {
+            echo "Buku dengan judul dan penulis tersebut sudah ada!";
         } else {
             $stmt = $conn->prepare("INSERT INTO books (isbn, title, publisher, author) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("isss", $isbn, $title, $publisher, $author);
@@ -59,46 +59,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Edit buku
         $title = $_POST['title'];
         $author = $_POST['author'];
-        $new_title = $_POST['new_title'];
+        $new_title = $_POST['new_title'] ?: $title;
         $new_publisher = $_POST['new_publisher'];
-        $new_author = $_POST['new_author'];
+        $new_author = $_POST['new_author'] ?: $author;
 
-        // Ambil data lama jika input baru kosong
-        $fetch_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ?");
-        $fetch_stmt->bind_param("ss", $title, $author);
-        $fetch_stmt->execute();
-        $result = $fetch_stmt->get_result();
+        $stmt = $conn->prepare("UPDATE books SET title = ?, publisher = ?, author = ? WHERE title = ? AND author = ?");
+        $stmt->bind_param("sssss", $new_title, $new_publisher, $new_author, $title, $author);
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $new_title = $new_title ?: $row['title'];
-            $new_publisher = $new_publisher ?: $row['publisher'];
-            $new_author = $new_author ?: $row['author'];
-
-            // Cek duplikasi title-author baru
-            $check_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ? AND NOT (title = ? AND author = ?)");
-            $check_stmt->bind_param("ssss", $new_title, $new_author, $title, $author);
-            $check_stmt->execute();
-            $check_result = $check_stmt->get_result();
-
-            if ($check_result->num_rows > 0) {
-                echo "Error: Kombinasi title dan author baru sudah ada di database!";
-            } else {
-                $stmt = $conn->prepare("UPDATE books SET title = ?, publisher = ?, author = ? WHERE title = ? AND author = ?");
-                $stmt->bind_param("sssss", $new_title, $new_publisher, $new_author, $title, $author);
-
-                if ($stmt->execute()) {
-                    echo "Buku berhasil diperbarui!";
-                } else {
-                    echo "Error: " . $stmt->error;
-                }
-                $stmt->close();
-            }
-            $check_stmt->close();
+        if ($stmt->execute()) {
+            echo "Buku berhasil diperbarui!";
         } else {
-            echo "Error: Buku yang ingin diperbarui tidak ditemukan!";
+            echo "Error: " . $stmt->error;
         }
-        $fetch_stmt->close();
+        $stmt->close();
 
     } elseif (isset($_POST['show_books'])) {
         // Tampilkan semua buku
@@ -122,6 +95,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   </tr>";
         }
         echo "</table>";
+
+    } elseif (isset($_POST['search_books'])) {
+        // Pencarian buku
+        $search_field = $_POST['search_field'];
+        $search_value = $_POST['search_value'];
+
+        $stmt = $conn->prepare("SELECT * FROM books WHERE $search_field LIKE ?");
+        $search_value = "%" . $search_value . "%";
+        $stmt->bind_param("s", $search_value);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            echo "<h3>Hasil Pencarian:</h3>";
+            echo "<table border='1'>
+                    <tr>
+                        <th>ID</th>
+                        <th>ISBN</th>
+                        <th>Title</th>
+                        <th>Publisher</th>
+                        <th>Author</th>
+                    </tr>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['isbn']}</td>
+                        <td>{$row['title']}</td>
+                        <td>{$row['publisher']}</td>
+                        <td>{$row['author']}</td>
+                      </tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Tidak ada hasil yang ditemukan.";
+        }
+        $stmt->close();
     }
 }
 ?>
@@ -133,6 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>CRUD Buku</h1>
+
+    <!-- Form tambah buku -->
     <h2>Tambah Buku</h2>
     <form method="post">
         <label>ISBN:</label>
@@ -146,6 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="add_book">Tambah</button>
     </form>
 
+    <!-- Form hapus buku -->
     <h2>Hapus Buku</h2>
     <form method="post">
         <label>Title:</label>
@@ -155,6 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="delete_book">Hapus</button>
     </form>
 
+    <!-- Form edit buku -->
     <h2>Edit Buku</h2>
     <form method="post">
         <label>Cari Title:</label>
@@ -170,9 +183,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="edit_book">Edit</button>
     </form>
 
+    <!-- Form tampilkan semua buku -->
     <h2>Tampilkan Semua Buku</h2>
     <form method="post">
         <button type="submit" name="show_books">Tampilkan</button>
+    </form>
+
+    <!-- Form pencarian buku -->
+    <h2>Cari Buku</h2>
+    <form method="post">
+        <label>Cari Berdasarkan:</label>
+        <select name="search_field">
+            <option value="title">Title</option>
+            <option value="publisher">Publisher</option>
+            <option value="author">Author</option>
+        </select><br>
+        <label>Masukkan Kata Kunci:</label>
+        <input type="text" name="search_value" required><br>
+        <button type="submit" name="search_books">Cari</button>
     </form>
 </body>
 </html>
