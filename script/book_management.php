@@ -19,15 +19,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $publisher = $_POST['publisher'];
         $author = $_POST['author'];
 
-        $stmt = $conn->prepare("INSERT INTO books (isbn, title, publisher, author) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("isss", $isbn, $title, $publisher, $author);
+        // Cek duplikasi title-author
+        $check_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ?");
+        $check_stmt->bind_param("ss", $title, $author);
+        $check_stmt->execute();
+        $check_result = $check_stmt->get_result();
 
-        if ($stmt->execute()) {
-            echo "Buku berhasil ditambahkan!";
+        if ($check_result->num_rows > 0) {
+            echo "Error: Buku dengan kombinasi title dan author yang sama sudah ada!";
         } else {
-            echo "Error: " . $stmt->error;
+            $stmt = $conn->prepare("INSERT INTO books (isbn, title, publisher, author) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("isss", $isbn, $title, $publisher, $author);
+
+            if ($stmt->execute()) {
+                echo "Buku berhasil ditambahkan!";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+            $stmt->close();
         }
-        $stmt->close();
+        $check_stmt->close();
 
     } elseif (isset($_POST['delete_book'])) {
         // Hapus buku
@@ -52,15 +63,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $new_publisher = $_POST['new_publisher'];
         $new_author = $_POST['new_author'];
 
-        $stmt = $conn->prepare("UPDATE books SET title = ?, publisher = ?, author = ? WHERE title = ? AND author = ?");
-        $stmt->bind_param("sssss", $new_title, $new_publisher, $new_author, $title, $author);
+        // Ambil data lama jika input baru kosong
+        $fetch_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ?");
+        $fetch_stmt->bind_param("ss", $title, $author);
+        $fetch_stmt->execute();
+        $result = $fetch_stmt->get_result();
 
-        if ($stmt->execute()) {
-            echo "Buku berhasil diperbarui!";
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $new_title = $new_title ?: $row['title'];
+            $new_publisher = $new_publisher ?: $row['publisher'];
+            $new_author = $new_author ?: $row['author'];
+
+            // Cek duplikasi title-author baru
+            $check_stmt = $conn->prepare("SELECT * FROM books WHERE title = ? AND author = ? AND NOT (title = ? AND author = ?)");
+            $check_stmt->bind_param("ssss", $new_title, $new_author, $title, $author);
+            $check_stmt->execute();
+            $check_result = $check_stmt->get_result();
+
+            if ($check_result->num_rows > 0) {
+                echo "Error: Kombinasi title dan author baru sudah ada di database!";
+            } else {
+                $stmt = $conn->prepare("UPDATE books SET title = ?, publisher = ?, author = ? WHERE title = ? AND author = ?");
+                $stmt->bind_param("sssss", $new_title, $new_publisher, $new_author, $title, $author);
+
+                if ($stmt->execute()) {
+                    echo "Buku berhasil diperbarui!";
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+                $stmt->close();
+            }
+            $check_stmt->close();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error: Buku yang ingin diperbarui tidak ditemukan!";
         }
-        $stmt->close();
+        $fetch_stmt->close();
 
     } elseif (isset($_POST['show_books'])) {
         // Tampilkan semua buku
@@ -124,11 +162,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Cari Author:</label>
         <input type="text" name="author" required><br>
         <label>Title Baru:</label>
-        <input type="text" name="new_title" required><br>
+        <input type="text" name="new_title"><br>
         <label>Publisher Baru:</label>
         <input type="text" name="new_publisher"><br>
         <label>Author Baru:</label>
-        <input type="text" name="new_author" required><br>
+        <input type="text" name="new_author"><br>
         <button type="submit" name="edit_book">Edit</button>
     </form>
 
