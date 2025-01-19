@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'libreadify_db';
+$db = 'silarusa_db';
 $user = 'root';
 $pass = '';
 
