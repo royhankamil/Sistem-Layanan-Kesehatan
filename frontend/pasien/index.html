@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/assets/"
+  data-template="vertical-menu-template-free">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>Beranda | SILARUSA - Sistem Layanan Rumah Sakit</title>
+
+  <meta name="description" content="" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon/silarusa_iconlogo.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css" />
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="/assets/css/demo.css" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+  <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <script src="/assets/vendor/js/helpers.js"></script>
+
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="/assets/js/config.js"></script>
+</head>
+
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <!-- Menu -->
+
+      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <div class="app-brand demo">
+          <!-- Logo -->
+          <a href="index.html" class="app-brand-link">
+            <span class="app-brand-logo demo">
+              <img src="/assets/img/favicon/silarusa_iconlogo.png" class="w-px-30" alt="" srcset="">
+            </span>
+            <span class="app-brand-text demo menu-text ms-2">
+              <svg width="120" height="70" viewBox="0 0 375 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M26.1 73.6C23.18 73.6 20.54 73.3 18.18 72.7C15.82 72.06 13.68 71.14 11.76 69.94C9.88 68.74 8.18 67.3 6.66 65.62L11.82 58.9C14.22 61.5 16.62 63.32 19.02 64.36C21.46 65.4 24 65.92 26.64 65.92C27.96 65.92 29.24 65.76 30.48 65.44C31.72 65.08 32.72 64.56 33.48 63.88C34.24 63.16 34.62 62.28 34.62 61.24C34.62 60.52 34.42 59.9 34.02 59.38C33.66 58.86 33.14 58.42 32.46 58.06C31.78 57.7 30.98 57.38 30.06 57.1C29.18 56.78 28.24 56.52 27.24 56.32C26.28 56.12 25.26 55.96 24.18 55.84C21.74 55.44 19.56 54.88 17.64 54.16C15.72 53.44 14.1 52.56 12.78 51.52C11.5 50.44 10.52 49.2 9.84 47.8C9.16 46.36 8.82 44.72 8.82 42.88C8.82 41 9.26 39.28 10.14 37.72C11.06 36.12 12.3 34.76 13.86 33.64C15.46 32.52 17.3 31.66 19.38 31.06C21.5 30.46 23.74 30.16 26.1 30.16C28.82 30.16 31.22 30.44 33.3 31C35.42 31.56 37.28 32.36 38.88 33.4C40.48 34.44 41.8 35.68 42.84 37.12L37.56 43C36.6 41.88 35.5 40.94 34.26 40.18C33.02 39.42 31.7 38.86 30.3 38.5C28.94 38.1 27.52 37.9 26.04 37.9C24.52 37.9 23.16 38.08 21.96 38.44C20.8 38.76 19.86 39.26 19.14 39.94C18.46 40.58 18.12 41.38 18.12 42.34C18.12 43.14 18.36 43.84 18.84 44.44C19.36 45 20.04 45.48 20.88 45.88C21.76 46.28 22.78 46.62 23.94 46.9C25.1 47.18 26.3 47.42 27.54 47.62C29.82 47.98 31.96 48.46 33.96 49.06C35.96 49.66 37.7 50.42 39.18 51.34C40.66 52.26 41.8 53.44 42.6 54.88C43.44 56.28 43.86 57.98 43.86 59.98C43.86 62.82 43.1 65.26 41.58 67.3C40.1 69.34 38.02 70.9 35.34 71.98C32.66 73.06 29.58 73.6 26.1 73.6ZM55.493 73V65.08H64.193V38.92H55.493V31H81.893V38.92H73.193V65.08H81.893V73H55.493ZM96.5742 73V31H105.574V64.9H127.954V73H96.5742ZM134.709 73L152.829 31H161.289L179.349 73H169.989L159.729 48.94C159.409 48.22 159.069 47.4 158.709 46.48C158.389 45.56 158.049 44.62 157.689 43.66C157.369 42.7 157.049 41.76 156.729 40.84C156.449 39.92 156.189 39.1 155.949 38.38L157.809 38.32C157.569 39.24 157.289 40.16 156.969 41.08C156.689 41.96 156.369 42.86 156.009 43.78C155.689 44.7 155.349 45.6 154.989 46.48C154.629 47.36 154.269 48.24 153.909 49.12L143.649 73H134.709ZM142.989 64.42L146.049 57.16H167.589L169.929 64.42H142.989ZM188.918 73V31H209.798C212.598 31 215.078 31.58 217.238 32.74C219.438 33.86 221.138 35.44 222.338 37.48C223.578 39.48 224.198 41.76 224.198 44.32C224.198 46.88 223.558 49.2 222.278 51.28C220.998 53.36 219.238 55.02 216.998 56.26C214.798 57.46 212.358 58.06 209.678 58.06H197.618V73H188.918ZM215.738 73L203.618 54.04L212.978 52.54L226.298 73.06L215.738 73ZM197.618 50.74H209.018C210.218 50.74 211.278 50.48 212.198 49.96C213.118 49.44 213.838 48.72 214.358 47.8C214.878 46.88 215.138 45.84 215.138 44.68C215.138 43.52 214.838 42.5 214.238 41.62C213.678 40.74 212.878 40.06 211.838 39.58C210.838 39.06 209.658 38.8 208.298 38.8H197.618V50.74ZM257.095 73.36C253.295 73.36 249.935 72.58 247.015 71.02C244.135 69.46 241.875 67.32 240.235 64.6C238.595 61.84 237.775 58.74 237.775 55.3V30.94H246.835V54.88C246.835 56.84 247.275 58.6 248.155 60.16C249.075 61.72 250.295 62.96 251.815 63.88C253.375 64.8 255.135 65.26 257.095 65.26C259.095 65.26 260.875 64.8 262.435 63.88C264.035 62.96 265.295 61.72 266.215 60.16C267.135 58.6 267.595 56.84 267.595 54.88V30.94H276.355V55.3C276.355 58.74 275.535 61.84 273.895 64.6C272.255 67.32 269.975 69.46 267.055 71.02C264.175 72.58 260.855 73.36 257.095 73.36ZM305.944 73.6C303.024 73.6 300.384 73.3 298.024 72.7C295.664 72.06 293.524 71.14 291.604 69.94C289.724 68.74 288.024 67.3 286.504 65.62L291.664 58.9C294.064 61.5 296.464 63.32 298.864 64.36C301.304 65.4 303.844 65.92 306.484 65.92C307.804 65.92 309.084 65.76 310.324 65.44C311.564 65.08 312.564 64.56 313.324 63.88C314.084 63.16 314.464 62.28 314.464 61.24C314.464 60.52 314.264 59.9 313.864 59.38C313.504 58.86 312.984 58.42 312.304 58.06C311.624 57.7 310.824 57.38 309.904 57.1C309.024 56.78 308.084 56.52 307.084 56.32C306.124 56.12 305.104 55.96 304.024 55.84C301.584 55.44 299.404 54.88 297.484 54.16C295.564 53.44 293.944 52.56 292.624 51.52C291.344 50.44 290.364 49.2 289.684 47.8C289.004 46.36 288.664 44.72 288.664 42.88C288.664 41 289.104 39.28 289.984 37.72C290.904 36.12 292.144 34.76 293.704 33.64C295.304 32.52 297.144 31.66 299.224 31.06C301.344 30.46 303.584 30.16 305.944 30.16C308.664 30.16 311.064 30.44 313.144 31C315.264 31.56 317.124 32.36 318.724 33.4C320.324 34.44 321.644 35.68 322.684 37.12L317.404 43C316.444 41.88 315.344 40.94 314.104 40.18C312.864 39.42 311.544 38.86 310.144 38.5C308.784 38.1 307.364 37.9 305.884 37.9C304.364 37.9 303.004 38.08 301.804 38.44C300.644 38.76 299.704 39.26 298.984 39.94C298.304 40.58 297.964 41.38 297.964 42.34C297.964 43.14 298.204 43.84 298.684 44.44C299.204 45 299.884 45.48 300.724 45.88C301.604 46.28 302.624 46.62 303.784 46.9C304.944 47.18 306.144 47.42 307.384 47.62C309.664 47.98 311.804 48.46 313.804 49.06C315.804 49.66 317.544 50.42 319.024 51.34C320.504 52.26 321.644 53.44 322.444 54.88C323.284 56.28 323.704 57.98 323.704 59.98C323.704 62.82 322.944 65.26 321.424 67.3C319.944 69.34 317.864 70.9 315.184 71.98C312.504 73.06 309.424 73.6 305.944 73.6ZM330.237 73L348.357 31H356.817L374.877 73H365.517L355.257 48.94C354.937 48.22 354.597 47.4 354.237 46.48C353.917 45.56 353.577 44.62 353.217 43.66C352.897 42.7 352.577 41.76 352.257 40.84C351.977 39.92 351.717 39.1 351.477 38.38L353.337 38.32C353.097 39.24 352.817 40.16 352.497 41.08C352.217 41.96 351.897 42.86 351.537 43.78C351.217 44.7 350.877 45.6 350.517 46.48C350.157 47.36 349.797 48.24 349.437 49.12L339.177 73H330.237ZM338.517 64.42L341.577 57.16H363.117L365.457 64.42H338.517Z"
+                  fill="url(#paint0_linear_4_78)" />
+                <path
+                  d="M26.1 73.6C23.18 73.6 20.54 73.3 18.18 72.7C15.82 72.06 13.68 71.14 11.76 69.94C9.88 68.74 8.18 67.3 6.66 65.62L11.82 58.9C14.22 61.5 16.62 63.32 19.02 64.36C21.46 65.4 24 65.92 26.64 65.92C27.96 65.92 29.24 65.76 30.48 65.44C31.72 65.08 32.72 64.56 33.48 63.88C34.24 63.16 34.62 62.28 34.62 61.24C34.62 60.52 34.42 59.9 34.02 59.38C33.66 58.86 33.14 58.42 32.46 58.06C31.78 57.7 30.98 57.38 30.06 57.1C29.18 56.78 28.24 56.52 27.24 56.32C26.28 56.12 25.26 55.96 24.18 55.84C21.74 55.44 19.56 54.88 17.64 54.16C15.72 53.44 14.1 52.56 12.78 51.52C11.5 50.44 10.52 49.2 9.84 47.8C9.16 46.36 8.82 44.72 8.82 42.88C8.82 41 9.26 39.28 10.14 37.72C11.06 36.12 12.3 34.76 13.86 33.64C15.46 32.52 17.3 31.66 19.38 31.06C21.5 30.46 23.74 30.16 26.1 30.16C28.82 30.16 31.22 30.44 33.3 31C35.42 31.56 37.28 32.36 38.88 33.4C40.48 34.44 41.8 35.68 42.84 37.12L37.56 43C36.6 41.88 35.5 40.94 34.26 40.18C33.02 39.42 31.7 38.86 30.3 38.5C28.94 38.1 27.52 37.9 26.04 37.9C24.52 37.9 23.16 38.08 21.96 38.44C20.8 38.76 19.86 39.26 19.14 39.94C18.46 40.58 18.12 41.38 18.12 42.34C18.12 43.14 18.36 43.84 18.84 44.44C19.36 45 20.04 45.48 20.88 45.88C21.76 46.28 22.78 46.62 23.94 46.9C25.1 47.18 26.3 47.42 27.54 47.62C29.82 47.98 31.96 48.46 33.96 49.06C35.96 49.66 37.7 50.42 39.18 51.34C40.66 52.26 41.8 53.44 42.6 54.88C43.44 56.28 43.86 57.98 43.86 59.98C43.86 62.82 43.1 65.26 41.58 67.3C40.1 69.34 38.02 70.9 35.34 71.98C32.66 73.06 29.58 73.6 26.1 73.6ZM55.493 73V65.08H64.193V38.92H55.493V31H81.893V38.92H73.193V65.08H81.893V73H55.493ZM96.5742 73V31H105.574V64.9H127.954V73H96.5742ZM134.709 73L152.829 31H161.289L179.349 73H169.989L159.729 48.94C159.409 48.22 159.069 47.4 158.709 46.48C158.389 45.56 158.049 44.62 157.689 43.66C157.369 42.7 157.049 41.76 156.729 40.84C156.449 39.92 156.189 39.1 155.949 38.38L157.809 38.32C157.569 39.24 157.289 40.16 156.969 41.08C156.689 41.96 156.369 42.86 156.009 43.78C155.689 44.7 155.349 45.6 154.989 46.48C154.629 47.36 154.269 48.24 153.909 49.12L143.649 73H134.709ZM142.989 64.42L146.049 57.16H167.589L169.929 64.42H142.989ZM188.918 73V31H209.798C212.598 31 215.078 31.58 217.238 32.74C219.438 33.86 221.138 35.44 222.338 37.48C223.578 39.48 224.198 41.76 224.198 44.32C224.198 46.88 223.558 49.2 222.278 51.28C220.998 53.36 219.238 55.02 216.998 56.26C214.798 57.46 212.358 58.06 209.678 58.06H197.618V73H188.918ZM215.738 73L203.618 54.04L212.978 52.54L226.298 73.06L215.738 73ZM197.618 50.74H209.018C210.218 50.74 211.278 50.48 212.198 49.96C213.118 49.44 213.838 48.72 214.358 47.8C214.878 46.88 215.138 45.84 215.138 44.68C215.138 43.52 214.838 42.5 214.238 41.62C213.678 40.74 212.878 40.06 211.838 39.58C210.838 39.06 209.658 38.8 208.298 38.8H197.618V50.74ZM257.095 73.36C253.295 73.36 249.935 72.58 247.015 71.02C244.135 69.46 241.875 67.32 240.235 64.6C238.595 61.84 237.775 58.74 237.775 55.3V30.94H246.835V54.88C246.835 56.84 247.275 58.6 248.155 60.16C249.075 61.72 250.295 62.96 251.815 63.88C253.375 64.8 255.135 65.26 257.095 65.26C259.095 65.26 260.875 64.8 262.435 63.88C264.035 62.96 265.295 61.72 266.215 60.16C267.135 58.6 267.595 56.84 267.595 54.88V30.94H276.355V55.3C276.355 58.74 275.535 61.84 273.895 64.6C272.255 67.32 269.975 69.46 267.055 71.02C264.175 72.58 260.855 73.36 257.095 73.36ZM305.944 73.6C303.024 73.6 300.384 73.3 298.024 72.7C295.664 72.06 293.524 71.14 291.604 69.94C289.724 68.74 288.024 67.3 286.504 65.62L291.664 58.9C294.064 61.5 296.464 63.32 298.864 64.36C301.304 65.4 303.844 65.92 306.484 65.92C307.804 65.92 309.084 65.76 310.324 65.44C311.564 65.08 312.564 64.56 313.324 63.88C314.084 63.16 314.464 62.28 314.464 61.24C314.464 60.52 314.264 59.9 313.864 59.38C313.504 58.86 312.984 58.42 312.304 58.06C311.624 57.7 310.824 57.38 309.904 57.1C309.024 56.78 308.084 56.52 307.084 56.32C306.124 56.12 305.104 55.96 304.024 55.84C301.584 55.44 299.404 54.88 297.484 54.16C295.564 53.44 293.944 52.56 292.624 51.52C291.344 50.44 290.364 49.2 289.684 47.8C289.004 46.36 288.664 44.72 288.664 42.88C288.664 41 289.104 39.28 289.984 37.72C290.904 36.12 292.144 34.76 293.704 33.64C295.304 32.52 297.144 31.66 299.224 31.06C301.344 30.46 303.584 30.16 305.944 30.16C308.664 30.16 311.064 30.44 313.144 31C315.264 31.56 317.124 32.36 318.724 33.4C320.324 34.44 321.644 35.68 322.684 37.12L317.404 43C316.444 41.88 315.344 40.94 314.104 40.18C312.864 39.42 311.544 38.86 310.144 38.5C308.784 38.1 307.364 37.9 305.884 37.9C304.364 37.9 303.004 38.08 301.804 38.44C300.644 38.76 299.704 39.26 298.984 39.94C298.304 40.58 297.964 41.38 297.964 42.34C297.964 43.14 298.204 43.84 298.684 44.44C299.204 45 299.884 45.48 300.724 45.88C301.604 46.28 302.624 46.62 303.784 46.9C304.944 47.18 306.144 47.42 307.384 47.62C309.664 47.98 311.804 48.46 313.804 49.06C315.804 49.66 317.544 50.42 319.024 51.34C320.504 52.26 321.644 53.44 322.444 54.88C323.284 56.28 323.704 57.98 323.704 59.98C323.704 62.82 322.944 65.26 321.424 67.3C319.944 69.34 317.864 70.9 315.184 71.98C312.504 73.06 309.424 73.6 305.944 73.6ZM330.237 73L348.357 31H356.817L374.877 73H365.517L355.257 48.94C354.937 48.22 354.597 47.4 354.237 46.48C353.917 45.56 353.577 44.62 353.217 43.66C352.897 42.7 352.577 41.76 352.257 40.84C351.977 39.92 351.717 39.1 351.477 38.38L353.337 38.32C353.097 39.24 352.817 40.16 352.497 41.08C352.217 41.96 351.897 42.86 351.537 43.78C351.217 44.7 350.877 45.6 350.517 46.48C350.157 47.36 349.797 48.24 349.437 49.12L339.177 73H330.237ZM338.517 64.42L341.577 57.16H363.117L365.457 64.42H338.517Z"
+                  fill="url(#paint1_linear_4_78)" />
+                <defs>
+                  <linearGradient id="paint0_linear_4_78" x1="3" y1="50.5" x2="431.5" y2="379.5"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#019293" />
+                    <stop offset="1" stop-color="#007C7D" />
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_4_78" x1="298" y1="-129.5" x2="438" y2="100"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#013567" stop-opacity="0" />
+                    <stop offset="1" stop-color="#1F62A3" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+          </a>
+
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
+        </div>
+
+        <div class="menu-inner-shadow"></div>
+
+        <ul class="menu-inner py-1">
+          <!-- Dashboard -->
+          <li class="menu-item active">
+            <a href="index.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <div data-i18n="Beranda">Beranda</div>
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a href="riwayat_pemeriksaan.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-collection"></i>
+              <div data-i18n="Riwayat Pemeriksaan">Riwayat Pemeriksaan</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="riwayat_radiologi.html" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-health"></i>
+              <div data-i18n="Riwayat Radiologi">Riwayat Radiologi</div>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- / Menu -->
+
+      <!-- Layout container -->
+      <div class="layout-page">
+        <!-- Navbar -->
+
+        <nav
+          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+          id="layout-navbar">
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+              <i class="bx bx-menu bx-sm"></i>
+            </a>
+          </div>
+
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <!-- Search 
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
+                </div>
+              </div>
+              Search -->
+
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <!-- Place this tag where you want the button to render. 
+                <li class="nav-item lh-1 me-3">
+                  <a
+                    class="github-button"
+                    href="https://github.com/themeselection/sneat-html-admin-template-free"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+                    >Star</a
+                  >
+                </li>-->
+
+              <!-- User -->
+              <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                  <div class="avatar">
+                    <i class="bx bxs-user-circle fs-1"></i>
+                  </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <span class="dropdown-item disabled">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar">
+                            <i class="bx bxs-user-circle fs-1"></i>
+                          </div>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="fw-semibold d-block">Pasien A</span>
+                          <small class="text-muted">Pasien</small>
+                        </div>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bx bx-user me-2"></i>
+                      <span class="align-middle">Profil</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="bx bx-cog me-2"></i>
+                      <span class="align-middle">Ubah Sandi</span>
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="d-flex align-items-center align-middle">
+                        <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                        <span class="flex-grow-1 align-middle">Billing</span>
+                        <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                      </span>
+                    </a>
+                  </li> -->
+                  <li>
+                    <div class="dropdown-divider"></div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/html/auth-login-basic.html">
+                      <i class="bx bx-log-out me-2 text-danger"></i>
+                      <span class="align-middle text-danger">Keluar</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!--/ User -->
+            </ul>
+          </div>
+        </nav>
+
+        <!-- / Navbar -->
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Content -->
+
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
+              <div class="col-lg-8 mb-4 order-0">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+                    <div class="col-sm-7">
+                      <div class="card-body">
+                        <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                        <p class="mb-4">
+                          You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
+                          your profile.
+                        </p>
+
+                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                      </div>
+                    </div>
+                    <div class="col-sm-5 text-center text-sm-left">
+                      <div class="card-body pb-0 px-0 px-md-4">
+                        <img src="/assets/img/illustrations/man-with-laptop-light.png" height="140"
+                          alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                          data-app-light-img="illustrations/man-with-laptop-light.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 order-1">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                          <div class="avatar flex-shrink-0">
+                            <img src="/assets/img/icons/unicons/chart-success.png" alt="chart success"
+                              class="rounded" />
+                          </div>
+                          <div class="dropdown">
+                            <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                              <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">Profit</span>
+                        <h3 class="card-title mb-2">$12,628</h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                          <div class="avatar flex-shrink-0">
+                            <img src="/assets/img/icons/unicons/wallet-info.png" alt="Credit Card" class="rounded" />
+                          </div>
+                          <div class="dropdown">
+                            <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                              <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <span>Sales</span>
+                        <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Total Revenue -->
+              <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                <div class="card">
+                  <div class="row row-bordered g-0">
+                    <div class="col-md-8">
+                      <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                      <div id="totalRevenueChart" class="px-2"></div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <div class="text-center">
+                          <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button"
+                              id="growthReportId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              2022
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                              <a class="dropdown-item" href="javascript:void(0);">2021</a>
+                              <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                              <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="growthChart"></div>
+                      <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+
+                      <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                        <div class="d-flex">
+                          <div class="me-2">
+                            <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <small>2022</small>
+                            <h6 class="mb-0">$32.5k</h6>
+                          </div>
+                        </div>
+                        <div class="d-flex">
+                          <div class="me-2">
+                            <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <small>2021</small>
+                            <h6 class="mb-0">$41.2k</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Total Revenue -->
+              <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                <div class="row">
+                  <div class="col-6 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                          <div class="avatar flex-shrink-0">
+                            <img src="/assets/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                          </div>
+                          <div class="dropdown">
+                            <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                              <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="d-block mb-1">Payments</span>
+                        <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                        <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                          <div class="avatar flex-shrink-0">
+                            <img src="/assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                          </div>
+                          <div class="dropdown">
+                            <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                              <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">Transactions</span>
+                        <h3 class="card-title mb-2">$14,857</h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- </div>
+    <div class="row"> -->
+                  <div class="col-12 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                          <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                            <div class="card-title">
+                              <h5 class="text-nowrap mb-2">Profile Report</h5>
+                              <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                            </div>
+                            <div class="mt-sm-auto">
+                              <small class="text-success text-nowrap fw-semibold"><i class="bx bx-chevron-up"></i>
+                                68.2%</small>
+                              <h3 class="mb-0">$84,686k</h3>
+                            </div>
+                          </div>
+                          <div id="profileReportChart"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Order Statistics -->
+              <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                    <div class="card-title mb-0">
+                      <h5 class="m-0 me-2">Order Statistics</h5>
+                      <small class="text-muted">42.82k Total Sales</small>
+                    </div>
+                    <div class="dropdown">
+                      <button class="btn p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                        <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <div class="d-flex flex-column align-items-center gap-1">
+                        <h2 class="mb-2">8,258</h2>
+                        <span>Total Orders</span>
+                      </div>
+                      <div id="orderStatisticsChart"></div>
+                    </div>
+                    <ul class="p-0 m-0">
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-mobile-alt"></i></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h6 class="mb-0">Electronic</h6>
+                            <small class="text-muted">Mobile, Earbuds, TV</small>
+                          </div>
+                          <div class="user-progress">
+                            <small class="fw-semibold">82.5k</small>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h6 class="mb-0">Fashion</h6>
+                            <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                          </div>
+                          <div class="user-progress">
+                            <small class="fw-semibold">23.8k</small>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h6 class="mb-0">Decor</h6>
+                            <small class="text-muted">Fine Art, Dining</small>
+                          </div>
+                          <div class="user-progress">
+                            <small class="fw-semibold">849k</small>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <span class="avatar-initial rounded bg-label-secondary"><i class="bx bx-football"></i></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <h6 class="mb-0">Sports</h6>
+                            <small class="text-muted">Football, Cricket Kit</small>
+                          </div>
+                          <div class="user-progress">
+                            <small class="fw-semibold">99</small>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--/ Order Statistics -->
+
+              <!-- Expense Overview -->
+              <div class="col-md-6 col-lg-4 order-1 mb-4">
+                <div class="card h-100">
+                  <div class="card-header">
+                    <ul class="nav nav-pills" role="tablist">
+                      <li class="nav-item">
+                        <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
+                          data-bs-target="#navs-tabs-line-card-income" aria-controls="navs-tabs-line-card-income"
+                          aria-selected="true">
+                          Income
+                        </button>
+                      </li>
+                      <li class="nav-item">
+                        <button type="button" class="nav-link" role="tab">Expenses</button>
+                      </li>
+                      <li class="nav-item">
+                        <button type="button" class="nav-link" role="tab">Profit</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body px-0">
+                    <div class="tab-content p-0">
+                      <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                        <div class="d-flex p-4 pt-3">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="/assets/img/icons/unicons/wallet.png" alt="User" />
+                          </div>
+                          <div>
+                            <small class="text-muted d-block">Total Balance</small>
+                            <div class="d-flex align-items-center">
+                              <h6 class="mb-0 me-1">$459.10</h6>
+                              <small class="text-success fw-semibold">
+                                <i class="bx bx-chevron-up"></i>
+                                42.9%
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="incomeChart"></div>
+                        <div class="d-flex justify-content-center pt-4 gap-2">
+                          <div class="flex-shrink-0">
+                            <div id="expensesOfWeek"></div>
+                          </div>
+                          <div>
+                            <p class="mb-n1 mt-1">Expenses This Week</p>
+                            <small class="text-muted">$39 less than last week</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Expense Overview -->
+
+              <!-- Transactions -->
+              <div class="col-md-6 col-lg-4 order-2 mb-4">
+                <div class="card h-100">
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Transactions</h5>
+                    <div class="dropdown">
+                      <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                        <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <ul class="p-0 m-0">
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Paypal</small>
+                            <h6 class="mb-0">Send money</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">+82.6</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Wallet</small>
+                            <h6 class="mb-0">Mac'D</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">+270.69</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Transfer</small>
+                            <h6 class="mb-0">Refund</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">+637.91</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Credit Card</small>
+                            <h6 class="mb-0">Ordered Food</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">-838.71</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Wallet</small>
+                            <h6 class="mb-0">Starbucks</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">+203.33</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="/assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                          <div class="me-2">
+                            <small class="text-muted d-block mb-1">Mastercard</small>
+                            <h6 class="mb-0">Ordered Food</h6>
+                          </div>
+                          <div class="user-progress d-flex align-items-center gap-1">
+                            <h6 class="mb-0">-92.45</h6>
+                            <span class="text-muted">USD</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!--/ Transactions -->
+            </div>
+          </div>
+          <!-- / Content -->
+
+          <!-- Footer -->
+          <footer class="content-footer footer bg-footer-theme">
+            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                ©
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                , <a href="index.html" class="footer-link fw-bolder">SILARUSA</a>
+              </div>
+              <div>
+                <!-- <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                  target="_blank" class="footer-link me-4">Documentation</a> -->
+
+                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
+                  class="footer-link me-4">Bantuan</a>
+              </div>
+            </div>
+          </footer>
+          <!-- / Footer -->
+
+          <div class="content-backdrop fade"></div>
+        </div>
+        <!-- Content wrapper -->
+      </div>
+      <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+  <!-- / Layout wrapper -->
+
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="/assets/vendor/libs/popper/popper.js"></script>
+  <script src="/assets/vendor/js/bootstrap.js"></script>
+  <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <script src="/assets/vendor/js/menu.js"></script>
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+  <script src="/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+  <!-- Main JS -->
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Page JS -->
+  <script src="/assets/js/dashboards-analytics.js"></script>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
