@@ -1,53 +1,58 @@
+<?php
+
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // Menampilkan form register
     public function showRegisterForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
-    // Menampilkan form login
-    public function showLoginForm()
-    {
-        return view('login');
-    }
-
-    // Proses register
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed'
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
-    // Proses login
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard')->with('success', 'Login berhasil!');
+            return redirect()->route('dashboard');
         }
 
-        return back()->withErrors(['email' => 'Email atau password salah!']);
+        return back()->withErrors(['email' => 'Email atau password salah']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
