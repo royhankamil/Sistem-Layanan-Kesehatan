@@ -3,7 +3,7 @@
 
 <head>
 	<base href="" />
-	<title>Rekam Medis | SILARUSA ー Sistem Layanan Rumah Sakit</title>
+	<title>Rekam Medis | MediTalk</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -12,14 +12,12 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="" />
 	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="SILARUSA ー Sistem Layanan Rumah Sakit" />
+	<meta property="og:site_name" content="MediTalk" />
 	<link rel="canonical" href="" />
-	<link rel="shortcut icon" href="/demo42/dist/assets/media/logos/silarusa_iconlogo.png" />
-
+	<link rel="shortcut icon" href="/demo42/dist/assets/media/logos/meditalk_iconlogo.png" />
 	<link href="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 	</style>
@@ -41,7 +39,7 @@
 							<i class="ki-outline ki-abstract-14 fs-2"></i>
 						</div>
 						<a href="./beranda.html">
-							<img alt="Logo" src="/demo42/dist/assets/media/logos/silarusa_iconlogo.png"
+							<img alt="Logo" src="/demo42/dist/assets/media/logos/meditalk_iconlogo.png"
 								class="h-30px" />
 						</a>
 					</div>
@@ -55,7 +53,7 @@
 					<div class="app-sidebar-logo flex-shrink-0 d-none d-md-flex align-items-center px-8"
 						id="kt_app_sidebar_logo">
 						<a href="./beranda.html">
-							<img alt="Logo" src="/demo42/dist/assets/media/logos/silarusa_textlogo.svg"
+							<img alt="Logo" src="/demo42/dist/assets/media/logos/meditalk_textlogo.svg"
 								class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
 							<img alt="Logo" src="/demo42/dist/assets/media/logos/demo42-dark.svg"
 								class="h-25px h-lg-25px theme-dark-show" />
@@ -251,31 +249,75 @@
 					<div class="d-flex flex-column flex-column-fluid">
 						<div id="kt_app_content" class="app-content flex-column-fluid">
 							<div id="kt_app_content_container" class="app-container container-xxl">
-								
+								<div class="card mb-5 mb-xl-5 box-shadow">
+									<div class="card-header ">
+										<div class="card-title m-0">
+											<h3 class="fw-bold m-0">Rekam Medis Pasien</h3>
+										</div>
+									</div>
+									<div class="card-body p-9">
+										<div class="d-flex align-items-center">
+											<div class="position-relative w-md-400px me-md-2">
+												<i
+													class="ki-outline ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6"></i>
+												<input type="text" class="form-control form-control-solid ps-10"
+													name="search" value="" placeholder="Search" />
+											</div>
+											<div class="d-flex align-items-center">
+												<button type="submit" class="btn btn-primary me-5">Cari nama pasien,
+													NRM...</button>
+											</div>
+										</div>
+
+										<div class="table-responsive">
+											<table id="tabel_rekam_medis"
+												class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+												<thead>
+													<tr class="fw-bold fs-6 text-gray-800 px-7">
+														<th>Tanggal</th>
+														<th>Dokter</th>
+														<th>Anamnesis</th>
+														<th>Hasil Pemeriksaan Fisik</th>
+														<th>Diagnosis</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>29 Jan 2025</td>
+														<td>dr. Kaeya Alberich, Sp.A (K)</td>
+														<td>sakit tenggorokan</td>
+														<td>tonisilitis</td>
+														<td>tonsilitis</td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div id="kt_app_footer" class="app-footer">
-							<div
-								class="app-container container-xxl d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-								<div class="text-dark order-2 order-md-1">
-									<span class="text-muted fw-semibold me-1">
-										<script>
-											document.write(new Date().getFullYear());
-										</script>&copy;
-									</span>
-									<a href="#" target="_blank" class="text-gray-800 text-hover-primary">SILARUSA</a>
-								</div>
+					</div>
+					<div id="kt_app_footer" class="app-footer">
+						<div
+							class="app-container container-xxl d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+							<div class="text-dark order-2 order-md-1">
+								<span class="text-muted fw-semibold me-1">
+									<script>
+										document.write(new Date().getFullYear());
+									</script>&copy;
+								</span>
+								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">MediTalk</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
 			<i class="ki-outline ki-arrow-up"></i>
 		</div>
-
 		<script>var hostUrl = "/demo42/dist/assets/";</script>
 		<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
 		<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
@@ -286,7 +328,6 @@
 		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 		<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
 		<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
-
 		<script>
 			$("#tabel_dokter_praktik").DataTable({
 				"scrollX": true
@@ -294,8 +335,19 @@
 			$("#tabel_saran_kritik").DataTable({
 				"scrollX": true
 			});
+			$("#tabel_rekam_medis").DataTable({
+				"language": {
+					"lengthMenu": "Show _MENU_",
+				},
+				"dom":
+					// Baris atas: Search tetap kanan atas
+					"<'row'<'col-sm-6'><'col-sm-6 d-flex align-items-center justify-content-end'f>>" +
+					// Tabel utama
+					"<'row'<'col-sm-12'tr>>" +
+					// Baris bawah: Length menu kiri, pagination kanan
+					"<'row mt-2'<'col-sm-12 col-md-5 d-flex align-items-center justify-content-start'l><'col-sm-12 col-md-7 d-flex align-items-center justify-content-end'p>>"
+			});
 		</script>
-
 </body>
 
 </html>
