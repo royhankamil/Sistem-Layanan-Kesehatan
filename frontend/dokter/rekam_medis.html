@@ -50,20 +50,14 @@
 					data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}"
 					data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start"
 					data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-					<div class="app-sidebar-logo flex-shrink-0 d-none d-md-flex align-items-center px-8"
+					<div class="app-sidebar-logo d-flex justify-content-center align-items-center px-8"
 						id="kt_app_sidebar_logo">
-						<a href="./beranda.html">
+						<a href="./beranda.html" class="d-flex justify-content-center">
 							<img alt="Logo" src="/demo42/dist/assets/media/logos/meditalk_textlogo.svg"
 								class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
 							<img alt="Logo" src="/demo42/dist/assets/media/logos/demo42-dark.svg"
 								class="h-25px h-lg-25px theme-dark-show" />
 						</a>
-						<div class="d-flex align-items-center d-lg-none ms-n3 me-1" title="Show aside menu">
-							<div class="btn btn-icon btn-active-color-primary w-30px h-30px"
-								id="kt_aside_mobile_toggle">
-								<i class="ki-outline ki-abstract-14 fs-1"></i>
-							</div>
-						</div>
 					</div>
 					<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
 						<div id="kt_app_sidebar_menu_wrapper"
@@ -83,19 +77,6 @@
 								</div>
 								<div class="menu-item pt-5">
 									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">JADWAL KERJA</span>
-									</div>
-								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="./jadwal_praktik.html">
-										<span class="menu-icon">
-											<i class="bi bi-person-vcard fs-2"></i>
-										</span>
-										<span class="menu-title">Jadwal Praktik</span>
-									</a>
-								</div>
-								<div class="menu-item pt-5">
-									<div class="menu-content">
 										<span class="menu-heading fw-bold text-uppercase fs-7">REKAM MEDIS PASIEN</span>
 									</div>
 								</div>
@@ -107,60 +88,38 @@
 										<span class="menu-title">Rekam Medis Pasien</span>
 									</a>
 								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="./hasil_lab.html">
-										<span class="menu-icon">
-											<i class="bi bi-hospital fs-2"></i>
-										</span>
-										<span class="menu-title">Pemeriksaan Laboratorium</span>
-									</a>
-								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="./info_pasien.html">
-										<span class="menu-icon">
-											<i class="bi bi-hospital fs-2"></i>
-										</span>
-										<span class="menu-title">Informasi Pasien</span>
-									</a>
-								</div>
 								<div class="menu-item pt-5">
 									<div class="menu-content">
 										<span class="menu-heading fw-bold text-uppercase fs-7">KONSULTASI</span>
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="./ketersediaan.html">
+									<a class="menu-link" href="./konsultasi.html">
 										<span class="menu-icon">
-											<i class="bi bi-hospital fs-2"></i>
+											<i class="ki-outline ki-messages fs-2"></i>
 										</span>
-										<span class="menu-title">Konsultasi Online dengan Pasien</span>
+										<span class="menu-title">Konsultasi</span>
 									</a>
-								</div>
-								<div class="menu-item pt-5">
-									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">FASILITAS</span>
-									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="./ketersediaan.html">
+									<a class="menu-link" href="./tarik_dana.html">
 										<span class="menu-icon">
-											<i class="bi bi-hospital fs-2"></i>
+											<i class="bi bi-cash-stack fs-2"></i>
 										</span>
-										<span class="menu-title">Pemeriksaan dan Pengambilan</span>
+										<span class="menu-title">Penarikan Dana</span>
 									</a>
-								</div>
-								<div class="menu-item pt-5">
-									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">PENGADUAN</span>
-									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="./saran_kritik.html">
-										<span class="menu-icon">
-											<i class="bi bi-chat-left-quote fs-2"></i>
-										</span>
-										<span class="menu-title">Saran dan Kritik</span>
-									</a>
+									<div class="menu-link">
+										<div class="form-check form-switch form-check-custom form-check-solid">
+											<input class="form-check-input" type="checkbox" value=""
+												id="switchAvailConsult" />
+											<label class="form-check-label" for="switchAvailConsult"
+												style="pointer-events: none;">
+												<span class="menu-title">Tersedia untuk Konsultasi</span>
+											</label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

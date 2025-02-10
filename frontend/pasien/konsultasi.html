@@ -217,144 +217,124 @@
 						</div>
 						<div id="kt_app_content" class="app-content flex-column-fluid">
 							<div id="kt_app_content_container" class="app-container container-xxl">
+								<div class="row mb-5">
+									<div class="col-md-6">
+										<div class="d-flex align-items-center position-relative"
+											data-kt-customer-table-toolbar="base">
+											<button type="button" class="btn btn-light-primary me-3"
+												data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+												<i class="ki-outline ki-filter fs-2"></i>Pilih Berdasarkan Poli</button>
+											<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px"
+												data-kt-menu="true" id="kt-toolbar-filter">
+												<div class="separator border-gray-200"></div>
+												<div class="px-7 py-5">
+													<div class="mb-10">
+														<label class="form-label fs-5 fw-semibold mb-3">Poli:</label>
+														<select class="form-select form-select-solid fw-bold"
+															data-kt-select2="true" data-placeholder="Select option"
+															data-allow-clear="true"
+															data-dropdown-parent="#kt-toolbar-filter">
+															<option></option>
+															<option value="THT">THT</option>
+															<option value="Anak">Anak</option>
+															<option value="Jantung">Jantung</option>
+															<option value="Penyakit Dalam">Penyakit Dalam</option>
+															<option value="Gigi">Gigi</option>
+														</select>
+													</div>
+													<div class="d-flex justify-content-end">
+														<button type="reset"
+															class="btn btn-light btn-active-light-primary me-2"
+															data-kt-menu-dismiss="true"
+															data-kt-customer-table-filter="reset">Reset</button>
+														<button type="submit" class="btn btn-primary"
+															data-kt-menu-dismiss="true"
+															data-kt-customer-table-filter="filter">Terapkan</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 d-flex justify-content-end">
+										<div class="d-flex align-items-center position-relative my-1">
+											<i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
+											<input type="text" data-kt-customer-table-filter="search"
+												class="form-control form-control w-250px ps-12"
+												placeholder="Cari Dokter" />
+										</div>
+									</div>
+
+								</div>
 								<div class="row g-6 g-xl-9">
-									<div class="col-md-6 col-xxl-3">
+									<div class="col-md-6 col-xxl-3 doctor-card" data-poli="THT">
 										<div class="card">
 											<div class="card-body d-flex flex-center flex-column p-9">
 												<div class="mb-5">
 													<div class="symbol symbol-200px">
 														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/300-6.jpg" />
+															src="/demo42/dist/assets/media/avatars/dokter.jpg" />
+														<div
+															class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px">
+														</div>
 													</div>
 												</div>
-												<a href="#"
-													class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">Dr. Agus
-													Rivero</a>
-												<div class="fw-semibold text-gray-400 mb-6">Spesialis Bedah</div>
+												<div class="fs-4 text-gray-800 fw-bold mb-0">Dr. Agus
+													Rivero</div>
+												<div class="fw-semibold text-gray-400 mb-6">Sp. THT</div>
 												<div class="d-flex flex-center flex-wrap mb-5">
 													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-3 mb-3">
-														<div class="fs-6 fw-bold text-gray-700 me-2">
+														class="border border-gray-300 border-dashed rounded min-w-70px py-2 px-4 mx-3 mb-3">
+														<div class="fs-7 fw-bold text-gray-700">
 															<i class="bi bi-hand-thumbs-up-fill"></i>
 															95%
 														</div>
 													</div>
 													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 mx-3 px-4 mb-3">
-														<div class="fs-6 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill me-2"></i>
+														class="border border-gray-300 border-dashed rounded min-w-80px py-2 mx-3 px-4 mb-3">
+														<div class="fs-7 fw-bold text-gray-700">
+															<i class="bi bi-briefcase-fill"></i>
 															9 Tahun
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-sm btn-light-primary fw-bold"
-													data-kt-drawer-show="true"
-													data-kt-drawer-target="#kt_drawer_chat">Send Message</button>
+												<a href="./konsultasi_profil_dokter.html"
+													class="btn btn-sm btn-light-primary fw-bold">Chat
+													<i class="bi bi-arrow-right ms-2"></i>
+												</a>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-6 col-xxl-3">
+									<div class="col-md-6 col-xxl-3 doctor-card" data-poli="Anak">
 										<div class="card">
 											<div class="card-body d-flex flex-center flex-column p-9">
 												<div class="mb-5">
 													<div class="symbol symbol-200px">
 														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/300-6.jpg" />
+															src="/demo42/dist/assets/media/avatars/dokter.jpg" />
 													</div>
 												</div>
-												<a href="#"
-													class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">Dr. Agus
-													Rivero</a>
-												<div class="fw-semibold text-gray-400 mb-6">Spesialis Bedah</div>
+												<div class="fs-4 text-gray-800 fw-bold mb-0">Dr. Kaeya
+													Alberich</div>
+												<div class="fw-semibold text-gray-400 mb-6">Sp. Anak</div>
 												<div class="d-flex flex-center flex-wrap mb-5">
 													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-3 mb-3">
-														<div class="fs-6 fw-bold text-gray-700 me-2">
+														class="border border-gray-300 border-dashed rounded min-w-70px py-2 px-4 mx-3 mb-3">
+														<div class="fs-7 fw-bold text-gray-700">
 															<i class="bi bi-hand-thumbs-up-fill"></i>
 															95%
 														</div>
 													</div>
 													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 mx-3 px-4 mb-3">
-														<div class="fs-6 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill me-2"></i>
+														class="border border-gray-300 border-dashed rounded min-w-80px py-2 mx-3 px-4 mb-3">
+														<div class="fs-7 fw-bold text-gray-700">
+															<i class="bi bi-briefcase-fill"></i>
 															9 Tahun
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-sm btn-light-primary fw-bold"
-													data-kt-drawer-show="true"
-													data-kt-drawer-target="#kt_drawer_chat">Send Message</button>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-xxl-3">
-										<div class="card">
-											<div class="card-body d-flex flex-center flex-column p-9">
-												<div class="mb-5">
-													<div class="symbol symbol-200px">
-														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/300-6.jpg" />
-													</div>
+												<div
+													class="btn btn-sm btn-light fw-bold">Tidak tersedia
 												</div>
-												<a href="#"
-													class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">Dr. Agus
-													Rivero</a>
-												<div class="fw-semibold text-gray-400 mb-6">Spesialis Bedah</div>
-												<div class="d-flex flex-center flex-wrap mb-5">
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-3 mb-3">
-														<div class="fs-6 fw-bold text-gray-700 me-2">
-															<i class="bi bi-hand-thumbs-up-fill"></i>
-															95%
-														</div>
-													</div>
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 mx-3 px-4 mb-3">
-														<div class="fs-6 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill me-2"></i>
-															9 Tahun
-														</div>
-													</div>
-												</div>
-												<button class="btn btn-sm btn-light-primary fw-bold"
-													data-kt-drawer-show="true"
-													data-kt-drawer-target="#kt_drawer_chat">Send Message</button>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-xxl-3">
-										<div class="card">
-											<div class="card-body d-flex flex-center flex-column p-9">
-												<div class="mb-5">
-													<div class="symbol symbol-200px">
-														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/300-6.jpg" />
-													</div>
-												</div>
-												<a href="#"
-													class="fs-4 text-gray-800 text-hover-primary fw-bold mb-0">Dr. Agus
-													Rivero</a>
-												<div class="fw-semibold text-gray-400 mb-6">Spesialis Bedah</div>
-												<div class="d-flex flex-center flex-wrap mb-5">
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-3 mb-3">
-														<div class="fs-6 fw-bold text-gray-700 me-2">
-															<i class="bi bi-hand-thumbs-up-fill"></i>
-															95%
-														</div>
-													</div>
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-3 mx-3 px-4 mb-3">
-														<div class="fs-6 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill me-2"></i>
-															9 Tahun
-														</div>
-													</div>
-												</div>
-												<button class="btn btn-sm btn-light-primary fw-bold"
-													data-kt-drawer-show="true"
-													data-kt-drawer-target="#kt_drawer_chat">Send Message</button>
 											</div>
 										</div>
 									</div>
@@ -421,96 +401,54 @@
 	<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
 	<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
 	<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 	<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
-	<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
 
 	<script>
-		am5.ready(function () {
-			// Create root element
-			var root = am5.Root.new("grafikKesehatan");
-			// Set themes
-			root.setThemes([
-				am5themes_Animated.new(root)
-			]);
-			// Create chart
-			var chart = root.container.children.push(am5xy.XYChart.new(root, {
-				panX: true,
-				panY: true,
-				wheelX: "panX",
-				wheelY: "zoomX",
-				pinchZoomX: true,
-				paddingLeft: 0,
-				paddingRight: 1
-			}));
-			// Add cursor
-			var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-			cursor.lineY.set("visible", false);
-			// Create axes
-			var xRenderer = am5xy.AxisRendererX.new(root, {
-				minGridDistance: 30,
-				minorGridEnabled: true
+		document.addEventListener("DOMContentLoaded", function () {
+			// JS Filter pilihan dokter berdasarkan poli/spesialis
+			const applyFilterButton = document.querySelector("[data-kt-customer-table-filter='filter']");
+			const resetFilterButton = document.querySelector("[data-kt-customer-table-filter='reset']");
+			const selectPoli = document.querySelector("[data-kt-select2='true']");
+			const doctorCards = document.querySelectorAll(".doctor-card");
+			const searchInput = document.querySelector("[data-kt-customer-table-filter='search']");
+
+			applyFilterButton.addEventListener("click", function () {
+				const selectedPoli = selectPoli.value;
+
+				doctorCards.forEach(card => {
+					if (!selectedPoli || card.getAttribute("data-poli") === selectedPoli) {
+						card.style.display = "block";
+					} else {
+						card.style.display = "none";
+					}
+				});
 			});
-			xRenderer.labels.template.setAll({
-				rotation: -90,
-				centerY: am5.p50,
-				centerX: am5.p100,
-				paddingRight: 15
+
+			resetFilterButton.addEventListener("click", function () {
+				selectPoli.value = ""; // Reset dropdown
+				doctorCards.forEach(card => {
+					card.style.display = "block"; // Tampilkan semua kartu dokter kembali
+				});
 			});
-			xRenderer.grid.template.setAll({
-				location: 1
+
+			// JS Input Cari Dokter -> Mencari dokter berdasarkan input nama, spesialis/poli
+			searchInput.addEventListener("input", function () {
+				const searchText = searchInput.value.toLowerCase();
+
+				doctorCards.forEach(card => {
+					const doctorName = card.querySelector("a").textContent.toLowerCase();
+					const doctorSpecialty = card.querySelector(".fw-semibold").textContent.toLowerCase();
+
+					if (doctorName.includes(searchText) || doctorSpecialty.includes(searchText)) {
+						card.style.display = "block";
+					} else {
+						card.style.display = "none";
+					}
+				});
 			});
-			var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-				maxDeviation: 0.3,
-				categoryField: "hasilTes",
-				renderer: xRenderer,
-				tooltip: am5.Tooltip.new(root, {})
-			}));
-			var yRenderer = am5xy.AxisRendererY.new(root, {
-				strokeOpacity: 0.1
-			});
-			var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-				maxDeviation: 0.3,
-				renderer: yRenderer
-			}));
-			// Create series
-			var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-				name: "Series 1",
-				xAxis: xAxis,
-				yAxis: yAxis,
-				valueYField: "value",
-				sequencedInterpolation: true,
-				categoryXField: "hasilTes",
-				tooltip: am5.Tooltip.new(root, {
-					labelText: "{valueY}"
-				})
-			}));
-			series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-			series.columns.template.adapters.add("fill", function (fill, target) {
-				return chart.get("colors").getIndex(series.columns.indexOf(target));
-			});
-			series.columns.template.adapters.add("stroke", function (stroke, target) {
-				return chart.get("colors").getIndex(series.columns.indexOf(target));
-			});
-			// Set data
-			var data = [{
-				hasilTes: "Gula darah",
-				value: 200
-			}, {
-				hasilTes: "Tekanan darah",
-				value: 320
-			}, {
-				hasilTes: "Kolestrol",
-				value: 300
-			}];
-			xAxis.data.setAll(data);
-			series.data.setAll(data);
-			// Make stuff animate on load
-			series.appear(1000);
-			chart.appear(1000, 100);
-		}); // end am5.ready()
+		});
+
+
 	</script>
 
 </body>
