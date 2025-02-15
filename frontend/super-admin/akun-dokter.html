@@ -56,7 +56,7 @@
 					<div class="app-sidebar-logo flex-shrink-0 d-none d-md-flex align-items-center px-8"
 						id="kt_app_sidebar_logo">
 						<a href="./beranda.html">
-							<img alt="Logo" src="/demo42/dist/assets/media/logos/silarusa_textlogo.svg"
+							<img alt="Logo" src="/demo42/dist/assets/media/logos/meditalk_textlogo.svg"
 								class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
 							<img alt="Logo" src="/demo42/dist/assets/media/logos/demo42-dark.svg"
 								class="h-25px h-lg-25px theme-dark-show" />
@@ -77,23 +77,39 @@
 							<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold px-1"
 								id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 								
+								
+								
 								<div class="menu-item pt-5">
+									<a class="menu-link" href="./beranda.html">
+										<span class="menu-icon">
+											<i class="ki-outline ki-home fs-2"></i>
+										</span>
+										<span class="menu-title">Beranda</span>
+									</a>
 									<div class="menu-content">
 										<span class="menu-heading fw-bold text-uppercase fs-7">AKUN</span>
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../../frontend/super-admin/akun-dokter.html">
+									<a class="menu-link active" href="../../frontend/super-admin/akun-dokter.html">
 										<span class="menu-icon">
 											<i class="bi bi-postcard-heart fs-2"></i>
 										</span>
-										<span class="menu-title">Akun Dokter</span>
+										<span class="menu-title">Dokter</span>
 									</a>
-									<a class="menu-link" href="../../demo42/dist/dashboards/rekammedis.html">
+									
+									<a class="menu-link" href="../../frontend/super-admin/akun-pasien.html">
 										<span class="menu-icon">
 											<i class="bi bi-person-vcard fs-2"></i>
 										</span>
-										<span class="menu-title">Akun Laborat</span>
+										<span class="menu-title">Pasien</span>
+									</a>
+
+									<a class="menu-link" href="../../frontend/super-admin/akun-lab.html">
+										<span class="menu-icon">
+											<i class="bi bi-hospital fs-2"></i>
+										</span>
+										<span class="menu-title">Laboratorium</span>
 									</a>
 									
 								</div>
@@ -103,7 +119,7 @@
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo42/dist/dashboards/rekammedis.html">
+									<a class="menu-link" href="../../frontend/super-admin/penarikan.html">
 										<span class="menu-icon">
 											<i class="bi bi-credit-card-2-front fs-3"></i>
 										</span>
@@ -208,50 +224,38 @@
 								<div class="card mb-5 mb-xl-10 box-shadow">
 									<div class="card-header ">
 										<div class="card-title m-0">
-											<h3 class="fw-bold m-0">Jadwal Jaga Perawat</h3>
+											<h3 class="fw-bold m-0">Akun Dokter </h3>
 										</div>
 									</div>
 									<div class="card-body p-9">
 										<div class="table-responsive">
-											<table id="tabel_perawat_jaga"
-												class="table table-striped table-row-bordered gy-5 gs-7">
-												<table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Usia</th>
-                                                            <th>Kota</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>John Doe</td>
-                                                            <td>28</td>
-                                                            <td>Jakarta</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Jane Smith</td>
-                                                            <td>34</td>
-                                                            <td>Bandung</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>Michael Johnson</td>
-                                                            <td>45</td>
-                                                            <td>Surabaya</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td>Sarah Brown</td>
-                                                            <td>30</td>
-                                                            <td>Yogyakarta</td>
-                                                        </tr>
-                                                    </tbody>
+											<table id="tabel_rekam_medis"
+												class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+												<thead>
 
-												
+													<tr class="fw-bold fs-6 text-gray-800 px-7">
+														<th>No</th>
+														<th>Nama</th>
+														<th>Email</th>
+														<th>Password</th>
+														<th>Action</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Lab Mata</td>
+														<td>veroo@gmail.com</td>
+														<td>********</td>
+														
+															<td>
+																<a href="#" onclick="updateData(1)" class="text-primary"><i class="fas fa-edit fa-2x"></i></a>
+          														<a href="#" onclick="deleteData(1)" class="text-danger"><i class="fas fa-trash-alt fa-2x" ></i></a>
+															</td>
+														<td></td>
+													</tr>
+												</tbody>
 											</table>
 										</div>
 									</div>
@@ -269,69 +273,61 @@
 										document.write(new Date().getFullYear());
 									</script>&copy;
 								</span>
-								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">SILARUSA</a>
+								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">MediTalk</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+			<i class="ki-outline ki-arrow-up"></i>
+		</div>
+		<script>var hostUrl = "/demo42/dist/assets/";</script>
+		<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
+		<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
+		<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
+		<script>
+			$("#tabel_dokter_praktik").DataTable({
+				"scrollX": true
+			});
+			$("#tabel_saran_kritik").DataTable({
+				"scrollX": true
+			});
+			$("#tabel_rekam_medis").DataTable({
+				"language": {
+					"lengthMenu": "Show _MENU_",
+				},
+				"dom":
+					// Baris atas: Search tetap kanan atas
+					"<'row'<'col-sm-6'><'col-sm-6 d-flex align-items-center justify-content-end'f>>" +
+					// Tabel utama
+					"<'row'<'col-sm-12'tr>>" +
+					// Baris bawah: Length menu kiri, pagination kanan
+					"<'row mt-2'<'col-sm-12 col-md-5 d-flex align-items-center justify-content-start'l><'col-sm-12 col-md-7 d-flex align-items-center justify-content-end'p>>"
+			});
+		</script>
+			<script>
+				function updateData(id) {
+				// Logika untuk update data
+				alert("Update data dengan ID: " + id);
+				}
 
-	<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-		<i class="ki-outline ki-arrow-up"></i>
-	</div>
-
-	<script>var hostUrl = "/demo42/dist/assets/";</script>
-	<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
-	<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
-	<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
-	<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-	<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
-	<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
-
-	<script>
-		$("#tabel_perawat_jaga").DataTable({
-			"scrollX": true
-		});
-		$("#tabel_saran_kritik").DataTable({
-			"scrollX": true
-		});
-	</script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f4f4f4;
-            font-weight: bold;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+					function deleteData(id) {
+					// Logika untuk delete data
+					if(confirm("Yakin ingin menghapus data dengan ID: " + id + "?")) {
+						alert("Data dengan ID: " + id + " telah dihapus.");
+					}
+				}
+  			</script>
+		
+		
 
 </body>
 
