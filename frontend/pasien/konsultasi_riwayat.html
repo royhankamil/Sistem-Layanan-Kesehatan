@@ -3,7 +3,7 @@
 
 <head>
 	<base href="" />
-	<title>Konsultasi | MediTalk</title>
+	<title>Riwayat Konsultasi | MediTalk</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -15,6 +15,7 @@
 	<meta property="og:site_name" content="MediTalk" />
 	<link rel="canonical" href="" />
 	<link rel="shortcut icon" href="/demo42/dist/assets/media/logos/meditalk_iconlogo.png" />
+
 	<link href="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
@@ -22,7 +23,6 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 	</style>
-
 	<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 </head>
 
@@ -30,7 +30,6 @@
 	data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-header="true"
 	data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" class="app-default">
 	<script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if (localStorage.getItem("data-bs-theme") !== null) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
-
 	<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
 		<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
 			<div id="kt_app_header" class="app-header">
@@ -118,7 +117,7 @@
 									</span>
 									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div class="menu-item">
-											<a class="menu-link active" href="./konsultasi.html">
+											<a class="menu-link" href="./konsultasi.html">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -126,7 +125,7 @@
 											</a>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="./konsultasi_riwayat.html">
+											<a class="menu-link active" href="./konsultasi_riwayat.html">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -229,167 +228,53 @@
 									<div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
 										<h1
 											class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-											Konsultasi dengan Dokter</h1>
+											Riwayat Konsultasi</h1>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div id="kt_app_content" class="app-content flex-column-fluid">
 							<div id="kt_app_content_container" class="app-container container-xxl">
-								<div class="row mb-5">
-									<div class="col-md-6">
-										<div class="d-flex align-items-center position-relative"
-											data-kt-customer-table-toolbar="base">
-											<button type="button" class="btn btn-light-primary me-3"
-												data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-												<i class="ki-outline ki-filter fs-2"></i>Pilih Berdasarkan Poli</button>
-											<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px"
-												data-kt-menu="true" id="kt-toolbar-filter">
-												<div class="separator border-gray-200"></div>
-												<div class="px-7 py-5">
-													<div class="mb-10">
-														<label class="form-label fs-5 fw-semibold mb-3">Poli:</label>
-														<select class="form-select form-select-solid fw-bold"
-															data-kt-select2="true" data-placeholder="Select option"
-															data-allow-clear="true"
-															data-dropdown-parent="#kt-toolbar-filter">
-															<option></option>
-															<option value="THT">THT</option>
-															<option value="Anak">Anak</option>
-															<option value="Jantung">Jantung</option>
-															<option value="Penyakit Dalam">Penyakit Dalam</option>
-															<option value="Gigi">Gigi</option>
-														</select>
-													</div>
-													<div class="d-flex justify-content-end">
-														<button type="reset"
-															class="btn btn-light btn-active-light-primary me-2"
-															data-kt-menu-dismiss="true"
-															data-kt-customer-table-filter="reset">Reset</button>
-														<button type="submit" class="btn btn-primary"
-															data-kt-menu-dismiss="true"
-															data-kt-customer-table-filter="filter">Terapkan</button>
-													</div>
-												</div>
-											</div>
+								<div class="card mb-5 mb-xl-5 box-shadow">
+									<div class="card-header ">
+										<div class="card-title m-0">
+											<h3 class="fw-bold m-0">Riwayat Konsultasi Saya</h3>
 										</div>
 									</div>
-									<div class="col-md-6 d-flex justify-content-end">
-										<div class="d-flex align-items-center position-relative my-1">
-											<i class="ki-outline ki-magnifier fs-3 position-absolute ms-5"></i>
-											<input type="text" data-kt-customer-table-filter="search"
-												class="form-control form-control w-250px ps-12"
-												placeholder="Cari Dokter" />
+									<div class="card-body p-9">
+										<div class="table-responsive">
+											<table id="tabel_riwayat_konsultasi"
+												class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+												<thead>
+													<tr class="fw-bold fs-6 text-gray-800 px-7">
+														<th>Tanggal</th>
+														<th>Waktu</th>
+														<th>Dokter</th>
+														<th>Diagnosis</th>
+														<th>Resep</th>
+														<th class="w-70px">Aksi</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>29 Jan 2025</td>
+														<td>09.19 - 10.19</td>
+														<td>dr. Kaeya Alberich, Sp.A (K)</td>
+														<td>demam, batuk, kepala berkunang-kunang</td>
+														<td>Panadol 1 strip</td>
+														<td class="d-flex">
+															<a href="./konsultasi_chat.html"
+																class="btn btn-icon btn-circle btn-sm  btn-light-info p-2 me-2"
+																data-bs-toggle="tooltip" data-bs-placement="top"
+																title="Lihat chat">
+																<i class="bi bi-chat-right-dots fs-3"></i>
+															</a>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
-
-								</div>
-								<div class="row g-6 g-xl-9">
-									<div class="col-md-6 col-xxl-3 doctor-card" data-poli="THT">
-										<div class="card">
-											<div class="card-body d-flex flex-center flex-column p-9">
-												<div class="mb-5">
-													<div class="symbol symbol-200px">
-														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/dokter.jpg" />
-														<div
-															class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px">
-														</div>
-													</div>
-												</div>
-												<div class="fs-4 text-gray-800 fw-bold mb-0">Dr. Agus
-													Rivero</div>
-												<div class="fw-semibold text-gray-400 mb-6">Sp. THT</div>
-												<div class="d-flex flex-center flex-wrap mb-5">
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-70px py-2 px-4 mx-3 mb-3">
-														<div class="fs-7 fw-bold text-gray-700">
-															<i class="bi bi-hand-thumbs-up-fill"></i>
-															95%
-														</div>
-													</div>
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-2 mx-3 px-4 mb-3">
-														<div class="fs-7 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill"></i>
-															9 Tahun
-														</div>
-													</div>
-												</div>
-												<a href="./konsultasi_profil_dokter.html"
-													class="btn btn-sm btn-light-primary fw-bold">Chat
-													<i class="bi bi-arrow-right ms-2"></i>
-												</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-xxl-3 doctor-card" data-poli="Anak">
-										<div class="card">
-											<div class="card-body d-flex flex-center flex-column p-9">
-												<div class="mb-5">
-													<div class="symbol symbol-200px">
-														<img alt="Pic"
-															src="/demo42/dist/assets/media/avatars/dokter.jpg" />
-													</div>
-												</div>
-												<div class="fs-4 text-gray-800 fw-bold mb-0">Dr. Kaeya
-													Alberich</div>
-												<div class="fw-semibold text-gray-400 mb-6">Sp. Anak</div>
-												<div class="d-flex flex-center flex-wrap mb-5">
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-70px py-2 px-4 mx-3 mb-3">
-														<div class="fs-7 fw-bold text-gray-700">
-															<i class="bi bi-hand-thumbs-up-fill"></i>
-															95%
-														</div>
-													</div>
-													<div
-														class="border border-gray-300 border-dashed rounded min-w-80px py-2 mx-3 px-4 mb-3">
-														<div class="fs-7 fw-bold text-gray-700">
-															<i class="bi bi-briefcase-fill"></i>
-															9 Tahun
-														</div>
-													</div>
-												</div>
-												<div
-													class="btn btn-sm btn-light fw-bold">Tidak tersedia
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="d-flex flex-stack flex-wrap pt-10">
-									<div class="fs-6 fw-semibold text-gray-700">Showing 1 to 10 of 50 entries</div>
-									<ul class="pagination">
-										<li class="page-item previous">
-											<a href="#" class="page-link">
-												<i class="previous"></i>
-											</a>
-										</li>
-										<li class="page-item active">
-											<a href="#" class="page-link">1</a>
-										</li>
-										<li class="page-item">
-											<a href="#" class="page-link">2</a>
-										</li>
-										<li class="page-item">
-											<a href="#" class="page-link">3</a>
-										</li>
-										<li class="page-item">
-											<a href="#" class="page-link">4</a>
-										</li>
-										<li class="page-item">
-											<a href="#" class="page-link">5</a>
-										</li>
-										<li class="page-item">
-											<a href="#" class="page-link">6</a>
-										</li>
-										<li class="page-item next">
-											<a href="#" class="page-link">
-												<i class="next"></i>
-											</a>
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -418,57 +303,10 @@
 
 	<script>var hostUrl = "/demo42/dist/assets/";</script>
 	<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
+	<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
 	<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
 	<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
 	<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// JS Filter pilihan dokter berdasarkan poli/spesialis
-			const applyFilterButton = document.querySelector("[data-kt-customer-table-filter='filter']");
-			const resetFilterButton = document.querySelector("[data-kt-customer-table-filter='reset']");
-			const selectPoli = document.querySelector("[data-kt-select2='true']");
-			const doctorCards = document.querySelectorAll(".doctor-card");
-			const searchInput = document.querySelector("[data-kt-customer-table-filter='search']");
-
-			applyFilterButton.addEventListener("click", function () {
-				const selectedPoli = selectPoli.value;
-
-				doctorCards.forEach(card => {
-					if (!selectedPoli || card.getAttribute("data-poli") === selectedPoli) {
-						card.style.display = "block";
-					} else {
-						card.style.display = "none";
-					}
-				});
-			});
-
-			resetFilterButton.addEventListener("click", function () {
-				selectPoli.value = ""; // Reset dropdown
-				doctorCards.forEach(card => {
-					card.style.display = "block"; // Tampilkan semua kartu dokter kembali
-				});
-			});
-
-			// JS Input Cari Dokter -> Mencari dokter berdasarkan input nama, spesialis/poli
-			searchInput.addEventListener("input", function () {
-				const searchText = searchInput.value.toLowerCase();
-
-				doctorCards.forEach(card => {
-					const doctorName = card.querySelector("a").textContent.toLowerCase();
-					const doctorSpecialty = card.querySelector(".fw-semibold").textContent.toLowerCase();
-
-					if (doctorName.includes(searchText) || doctorSpecialty.includes(searchText)) {
-						card.style.display = "block";
-					} else {
-						card.style.display = "none";
-					}
-				});
-			});
-		});
-
-
-	</script>
 
 </body>
 
