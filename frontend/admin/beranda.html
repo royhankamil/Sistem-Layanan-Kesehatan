@@ -3,7 +3,7 @@
 
 <head>
 	<base href="" />
-	<title>Beranda | SILARUSA ー Sistem Layanan Rumah Sakit</title>
+	<title>Beranda | MediTalk</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -56,7 +56,7 @@
 					<div class="app-sidebar-logo flex-shrink-0 d-none d-md-flex align-items-center px-8"
 						id="kt_app_sidebar_logo">
 						<a href="./beranda.html">
-							<img alt="Logo" src="/demo42/dist/assets/media/logos/silarusa_textlogo.svg"
+							<img alt="Logo" src="/demo42/dist/assets/media/logos/meditalk_textlogo.svg"
 								class="h-35px d-none d-sm-inline app-sidebar-logo-default theme-light-show" />
 							<img alt="Logo" src="/demo42/dist/assets/media/logos/demo42-dark.svg"
 								class="h-25px h-lg-25px theme-dark-show" />
@@ -65,7 +65,7 @@
 							<div class="btn btn-icon btn-active-color-primary w-30px h-30px"
 								id="kt_aside_mobile_toggle">
 								<i class="ki-outline ki-abstract-14 fs-1"></i>
-							</div>
+							</div> 
 						</div>
 					</div>
 					<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
@@ -77,41 +77,32 @@
 							<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold px-1"
 								id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 								
+								
 								<div class="menu-item pt-5">
+									<a class="menu-link active" href="./beranda.html">
+										<span class="menu-icon">
+											<i class="ki-outline ki-home fs-2"></i>
+										</span>
+										<span class="menu-title">Beranda</span>
+									</a>
 									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">AKUN</span>
+										<span class="menu-heading fw-bold text-uppercase fs-7">Rekam Medis</span>
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../../frontend/super-admin/akun-dokter.html">
-										<span class="menu-icon">
-											<i class="bi bi-postcard-heart fs-2"></i>
-										</span>
-										<span class="menu-title">Akun Dokter</span>
-									</a>
-									<a class="menu-link" href="../../demo42/dist/dashboards/rekammedis.html">
+									
+									<a class="menu-link" href="../../frontend/admin/rekam-medis.html">
 										<span class="menu-icon">
 											<i class="bi bi-person-vcard fs-2"></i>
 										</span>
-										<span class="menu-title">Akun Laborat</span>
+										<span class="menu-title">Pasien</span>
 									</a>
-									
-								</div>
-								<div class="menu-item pt-5">
-									<div class="menu-content">
-										<span class="menu-heading fw-bold text-uppercase fs-7">Penarikan</span>
-									</div>
-								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="../../demo42/dist/dashboards/rekammedis.html">
-										<span class="menu-icon">
-											<i class="bi bi-credit-card-2-front fs-3"></i>
-										</span>
-										<span class="menu-title">Penarikan Dana Dokter</span>
-									</a>
+
 									
 									
 								</div>
+								
+								
 								
 								
 								
@@ -131,7 +122,7 @@
 								</div>
 								<div class="d-flex flex-column align-items-start justify-content-center ms-3">
 									<span class="text-gray-500 fs-8 fw-semibold">Selamat datang,</span>
-									<a href="#" class="text-gray-800 fs-7 fw-bold text-hover-primary">Super Admin</a>
+									<a href="#" class="text-gray-800 fs-7 fw-bold text-hover-primary">Laboratorium</a>
 								</div>
 							</div>
 							<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
@@ -142,7 +133,7 @@
 											<img alt="Logo" src="/demo42/dist/assets/media/avatars/user.jpg" />
 										</div>
 										<div class="d-flex flex-column">
-											<div class="fw-bold d-flex align-items-center fs-5">Super Admin
+											<div class="fw-bold d-flex align-items-center fs-5">Laboratorium
 											</div>
 										</div>
 									</div>
@@ -203,65 +194,44 @@
 				</div>
 				<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 					<div class="d-flex flex-column flex-column-fluid">
+						<div id="kt_app_toolbar" class="app-toolbar pt-5 pt-lg-10">
+							<div id="kt_app_toolbar_container"
+								class="app-container container-xxl d-flex flex-stack flex-wrap">
+								<div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+									<div class="page-title d-flex flex-column justify-content-center gap-1 me-3">
+										<h1
+											class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
+											Beranda</h1>
+										<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
+											<li class="breadcrumb-item text-muted">
+												<span class="text-muted">Selamat Datang, Nama
+													Pasien</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div id="kt_app_content" class="app-content flex-column-fluid">
 							<div id="kt_app_content_container" class="app-container container-xxl">
-								<div class="card mb-5 mb-xl-10 box-shadow">
-									<div class="card-header ">
-										<div class="card-title m-0">
-											<h3 class="fw-bold m-0">Jadwal Jaga Perawat</h3>
-										</div>
-									</div>
-									<div class="card-body p-9">
-										<div class="table-responsive">
-											<table id="tabel_perawat_jaga"
-												class="table table-striped table-row-bordered gy-5 gs-7">
-												<table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Usia</th>
-                                                            <th>Kota</th>
-															<th>Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>John Doe</td>
-                                                            <td>28</td>
-                                                            <td>Jakarta</td>
-															<td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Jane Smith</td>
-                                                            <td>34</td>
-                                                            <td>Bandung</td>
-															<td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>Michael Johnson</td>
-                                                            <td>45</td>
-                                                            <td>Surabaya</td>
-															<td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td>Sarah Brown</td>
-                                                            <td>30</td>
-                                                            <td>Yogyakarta</td>
-															<td></td>
-                                                        </tr>
-                                                    </tbody>
-
-												
-											</table>
+								<div class="card-body">
+									<div class="table-responsive">
+										<div class="col-xl-12">
+											<div class="card card-xl-stretch mb-xl-1" style="background: linear-gradient(45deg, #8c46c9, #72C5D7); min-height: 160px;height: auto;">
+												<div class="card-body d-flex flex-column position-relative">
+													<a href="./konsultasi.html"
+														class="btn btn-outline btn-outline-dashed btn-outline-secondary position-absolute bottom-0 end-0 m-5">
+														Tambah Rekam Medis
+													</a>
+													<div class="text-white fw-bold fs-2 mb-2" style="margin-bottom: 30px;">SELAMAT DATANG LABORATORIUM</div>
+													<div class="fw-semibold text-white" style="margin-top: 15px; max-width: 500px;">kami mengembangkan solusi digital untuk membantu rumah sakit mengelola data pasien dengan lebih akurat, aman, dan efisien.</div>
+														
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-
+								
 							</div>
 						</div>
 					</div>
@@ -274,7 +244,7 @@
 										document.write(new Date().getFullYear());
 									</script>&copy;
 								</span>
-								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">SILARUSA</a>
+								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">MediTalk</a>
 							</div>
 						</div>
 					</div>
@@ -306,7 +276,7 @@
 			"scrollX": true
 		});
 	</script>
-    <style>
+	<style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;

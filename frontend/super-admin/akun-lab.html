@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-	<base href="" />
-	<title>Beranda | SILARUSA ー Sistem Layanan Rumah Sakit</title>
+	<base href=""<<<<	<title>Beranda | SILARUSA ー Sistem Layanan Rumah Sakit</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -19,9 +18,30 @@
 	<link href="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/demo42/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+		td > a {
+      margin-right: 10px;
+      font-size: 1.2em;
+    	}
+		td > a:hover {
+		opacity: 0.7;
+		}
+		.update-icon {
+		font-size: 40px; /* Atur ukuran sesuai keinginan */
+		}
+
+		.delete-icon {
+		font-size: 40px; /* Atur ukuran sesuai keinginan */
+		}
+		.update-icon:hover {
+		color: #1e7e34; /* Warna saat di-hover */
+		}
+
+		.delete-icon:hover {
+		color: #bd2130; /* Warna saat di-hover */
+		}
 	</style>
 	<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 </head>
@@ -65,7 +85,7 @@
 							<div class="btn btn-icon btn-active-color-primary w-30px h-30px"
 								id="kt_aside_mobile_toggle">
 								<i class="ki-outline ki-abstract-14 fs-1"></i>
-							</div> 
+							</div>
 						</div>
 					</div>
 					<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
@@ -78,8 +98,9 @@
 								id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 								
 								
+								
 								<div class="menu-item pt-5">
-									<a class="menu-link active" href="./beranda.html">
+									<a class="menu-link" href="./beranda.html">
 										<span class="menu-icon">
 											<i class="ki-outline ki-home fs-2"></i>
 										</span>
@@ -104,7 +125,7 @@
 										<span class="menu-title">Pasien</span>
 									</a>
 
-									<a class="menu-link" href="../../frontend/super-admin/akun-lab.html">
+									<a class="menu-link active" href="../../frontend/super-admin/akun-lab.html">
 										<span class="menu-icon">
 											<i class="bi bi-hospital fs-2"></i>
 										</span>
@@ -223,86 +244,43 @@
 								<div class="card mb-5 mb-xl-10 box-shadow">
 									<div class="card-header ">
 										<div class="card-title m-0">
-											<h3 class="fw-bold m-0">Beranda Super Admin</h3>
+											<h3 class="fw-bold m-0">Akun Laboratorium</h3>
 										</div>
 									</div>
-									<div class="card-body">
-											<div class="table-responsive">
-												<div class="row">
-													<div class="col-xl-4">
-														<!--begin::Statistics Widget 4-->
-														<div class="card card-xl-stretch mb-xl-8">
-															<!--begin::Body-->
-															<div class="card-body p-0">
-																<div class="d-flex flex-stack card-p flex-grow-1">
-																	<span class="symbol symbol-50px me-2">
-																		<span class="symbol-label bg-light-success">
-																			<i class="bi bi-currency-dollar fs-2x text-success"></i>
-																		</span>
-																	</span>
-																	<div class="d-flex flex-column text-end">
-																		<span class="text-dark fw-bold fs-2">Rp.300.000</span>
-																		<span class="text-muted fw-semibold mt-1">Pemasukan</span>
-																	</div>
-																</div>
-																<div class="statistics-widget-4-chart card-rounded-bottom" data-kt-chart-color="success" style="height: 150px"></div>
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::Statistics Widget 4-->
-													</div>
-													<div class="col-xl-4">
-														<!--begin::Statistics Widget 4-->
-														<div class="card card-xl-stretch mb-5 mb-xl-8">
-															<!--begin::Body-->
-															<div class="card-body p-0">
-																<div class="d-flex flex-stack card-p flex-grow-1">
-																	<span class="symbol symbol-50px me-2">
-																		<span class="symbol-label bg-light-primary">
-																			<i class="bi bi-postcard-heart fs-2x text-primary"></i>
-																		</span>
-																	</span>
-																	<div class="d-flex flex-column text-end">
-																		<span class="text-dark fw-bold fs-2">25</span>
-																		<span class="text-muted fw-semibold mt-1">Dokter Aktif</span>
-																	</div>
-																</div>
-																<div class="statistics-widget-4-chart card-rounded-bottom" data-kt-chart-color="primary" style="height: 150px"></div>
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::Statistics Widget 4-->
-														
-													</div>
-													<div class="col-xl-4">
-											<!--begin::Statistics Widget 4-->
-											<div class="card card-xl-stretch mb-xl-8">
-												<!--begin::Body-->
-												<div class="card-body p-0">
-													<div class="d-flex flex-stack card-p flex-grow-1">
-														<span class="symbol symbol-50px me-2">
-															<span class="symbol-label bg-light-info">
-																<i class="bi bi-person-vcard fs-2x text-info"></i>
-															</span>
-														</span>
-														<div class="d-flex flex-column text-end">
-															<span class="text-dark fw-bold fs-2">+50</span>
-															<span class="text-muted fw-semibold mt-1">Pasien Baru</span>
-														</div>
-													</div>
-													<div class="statistics-widget-4-chart card-rounded-bottom" data-kt-chart-color="info" style="height: 150px"></div>
-												</div>
-												<!--end::Body-->
-											</div>
-											<!--end::Statistics Widget 4-->
-										</div>
-												</div>
-											</div>
-										</div>
+									<div class="card-body p-9">
+										<div class="table-responsive">
+											<table id="tabel_rekam_medis"
+												class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+												<thead>
 
+													<tr class="fw-bold fs-6 text-gray-800 px-7">
+														<th>No</th>
+														<th>Nama</th>
+														<th>Email</th>
+														<th>Password</th>
+														<th>Action</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Lab Mata</td>
+														<td>veroo@gmail.com</td>
+														<td>********</td>
+														
+															<td>
+																<a href="#" onclick="updateData(1)" class="text-primary"><i class="fas fa-edit update-icon"></i></a>
+          														<a href="#" onclick="deleteData(1)" class="text-danger"><i class="fas fa-trash-alt delete-icon"></i></a>
+															</td>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 
-								
 							</div>
 						</div>
 					</div>
@@ -315,69 +293,110 @@
 										document.write(new Date().getFullYear());
 									</script>&copy;
 								</span>
-								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">MEDITALK</a>
+								<a href="#" target="_blank" class="text-gray-800 text-hover-primary">MediTalk</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+			<i class="ki-outline ki-arrow-up"></i>
+		</div>
+		<script>var hostUrl = "/demo42/dist/assets/";</script>
+		<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
+		<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
+		<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
+		<script>
+			$("#tabel_dokter_praktik").DataTable({
+				"scrollX": true
+			});
+			$("#tabel_saran_kritik").DataTable({
+				"scrollX": true
+			});
+			$("#tabel_rekam_medis").DataTable({
+				"language": {
+					"lengthMenu": "Show _MENU_",
+				},
+				"dom":
+					// Baris atas: Search tetap kanan atas
+					"<'row'<'col-sm-6'><'col-sm-6 d-flex align-items-center justify-content-end'f>>" +
+					// Tabel utama
+					"<'row'<'col-sm-12'tr>>" +
+					// Baris bawah: Length menu kiri, pagination kanan
+					"<'row mt-2'<'col-sm-12 col-md-5 d-flex align-items-center justify-content-start'l><'col-sm-12 col-md-7 d-flex align-items-center justify-content-end'p>>"
+			});
+		</script>
+			<script>
+				function updateData(id) {
+				// Logika untuk update data
+				alert("Update data dengan ID: " + id);
+				}
 
-	<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-		<i class="ki-outline ki-arrow-up"></i>
-	</div>
+					function deleteData(id) {
+					// Logika untuk delete data
+					if(confirm("Yakin ingin menghapus data dengan ID: " + id + "?")) {
+						alert("Data dengan ID: " + id + " telah dihapus.");
+					}
+				}
+  			</script>
+			
+		
+		
 
-	<script>var hostUrl = "/demo42/dist/assets/";</script>
-	<script src="/demo42/dist/assets/plugins/global/plugins.bundle.js"></script>
-	<script src="/demo42/dist/assets/plugins/custom/datatables/datatables.bundle.js"></script>
-	<script src="/demo42/dist/assets/js/scripts.bundle.js"></script>
-	<script src="/demo42/dist/assets/js/widgets.bundle.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-	<script src="/demo42/dist/assets/js/custom/widgets.js"></script>
-	<script src="/demo42/dist/assets/js/custom/apps/chat/chat.js"></script>
+updateData(id) {
+				// Logika untuk update data
+				alert("Update data dengan ID: " + id);
+				}
 
-	<script>
-		$("#tabel_perawat_jaga").DataTable({
-			"scrollX": true
-		});
-		$("#tabel_saran_kritik").DataTable({
-			"scrollX": true
-		});
-	</script>
-	<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+					function deleteData(id) {
+					// Logika untuk delete data
+					if(confirm("Yakin ingin menghapus data dengan ID: " + id + "?")) {
+						alert("Data dengan ID: " + id + " telah dihapus.");
+					}
+				}
+  			</script>
+			
+		
+		
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+updateData(id) {
+				// Logika untuk update data
+				alert("Update data dengan ID: " + id);
+				}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+					function deleteData(id) {
+					// Logika untuk delete data
+					if(confirm("Yakin ingin menghapus data dengan ID: " + id + "?")) {
+						alert("Data dengan ID: " + id + " telah dihapus.");
+					}
+				}
+  			</script>
+			
+		
+		
 
-        th {
-            background-color: #f4f4f4;
-            font-weight: bold;
-        }
+ updateData(id) {
+				// Logika untuk update data
+				alert("Update data dengan ID: " + id);
+				}
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+					function deleteData(id) {
+					// Logika untuk delete data
+					if(confirm("Yakin ingin menghapus data dengan ID: " + id + "?")) {
+						alert("Data dengan ID: " + id + " telah dihapus.");
+					}
+				}
+  			</script>
+			
+		
+		
 
 </body>
 
