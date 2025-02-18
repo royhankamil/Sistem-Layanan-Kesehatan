@@ -116,32 +116,32 @@
                                     </div>
                                 </div>
                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion show">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<i class="ki-outline ki-messages fs-2"></i>
-										</span>
-										<span class="menu-title">Konsultasi dengan Dokter</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg">
-										<div class="menu-item">
-											<a class="menu-link active" href="./konsultasi.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Konsultasi dengan Dokter</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="./konsultasi_riwayat.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Riwayat Konsultasi</span>
-											</a>
-										</div>
-									</div>
-								</div>
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-messages fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Konsultasi dengan Dokter</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                                        <div class="menu-item">
+                                            <a class="menu-link active" href="./konsultasi.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Konsultasi dengan Dokter</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" href="./konsultasi_riwayat.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Riwayat Konsultasi</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -264,7 +264,8 @@
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <div id="kt_app_content_container" class="app-container container-xxl">
                                 <div class="d-flex flex-column flex-lg-row">
-                                    <div class="flex-column flex-lg-row-auto w-100 w-lg-300px w-xl-400px mb-10 mb-lg-0 order-1 order-lg-0">
+                                    <div
+                                        class="flex-column flex-lg-row-auto w-100 w-lg-300px w-xl-400px mb-10 mb-lg-0 order-1 order-lg-0">
                                         <div class="card card-flush">
                                             <div class="card-header pt-7" id="kt_chat_contacts_header">
                                                 <form class="w-100 position-relative" autocomplete="off">
@@ -400,7 +401,8 @@
                                                                 <div class="me-3">
                                                                     <span class="text-muted fs-7 mb-1">13.48</span>
                                                                     <a href="#"
-                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">Pasien A</a>
+                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">Pasien
+                                                                        A</a>
                                                                 </div>
                                                                 <div class="symbol symbol-35px symbol-circle">
                                                                     <img alt="Pic"
@@ -443,7 +445,8 @@
                                                             href="javascript:document.getElementById('inputFile').click(); ">
                                                             <div
                                                                 class="btn btn-sm btn-icon btn-active-light-primary me-1">
-                                                                <i class="ki-outline ki-paper-clip fs-3"></i></div>
+                                                                <i class="ki-outline ki-paper-clip fs-3"></i>
+                                                            </div>
                                                         </a>
                                                     </div>
                                                     <button class="btn btn-primary px-4" type="button"
@@ -451,6 +454,126 @@
                                                         <i class="bi bi-send fs-5 ms-2"></i>
                                                     </button>
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Ulasan setelah konsultasi selesai-->
+                                        <div class="card" id="kt_chat_messenger">
+                                            <div class="card-header" id="kt_chat_messenger_header">
+                                                <div class="card-title">
+                                                    <div class="d-flex justify-content-center flex-column me-3">
+                                                        <a href="#"
+                                                            class="fs-4 fw-bold text-gray-900 text-hover-primary me-1 mb-2 lh-1">Dr.
+                                                            Agus Rivero, Sp.THT</a>
+                                                        <div class="mb-0 lh-1">
+                                                            <span class="fs-7 fw-semibold text-muted">Konsultasi ini
+                                                                telah berakhir</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body" id="kt_chat_messenger_body">
+                                                <div class="scroll-y me-n5 pe-5 h-300px h-lg-auto"
+                                                    data-kt-element="messages" data-kt-scroll="true"
+                                                    data-kt-scroll-activate="{default: false, lg: true}"
+                                                    data-kt-scroll-max-height="auto"
+                                                    data-kt-scroll-dependencies="#kt_header, #kt_app_header, #kt_app_toolbar, #kt_toolbar, #kt_footer, #kt_app_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer"
+                                                    data-kt-scroll-wrappers="#kt_content, #kt_app_content, #kt_chat_messenger_body"
+                                                    data-kt-scroll-offset="5px">
+                                                    <div class="d-flex justify-content-start mb-10">
+                                                        <div class="d-flex flex-column align-items-start">
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                <div class="symbol symbol-35px symbol-circle">
+                                                                    <img alt="Pic"
+                                                                        src="/demo42/dist/assets/media/avatars/dokter.jpg" />
+                                                                </div>
+                                                                <div class="ms-3">
+                                                                    <a href="#"
+                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Dr.
+                                                                        Agus Rivero, Sp.THT</a>
+                                                                    <span class="text-muted fs-7 mb-1">04.19</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start"
+                                                                data-kt-element="message-text">Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit. Ut et massa mi.
+                                                                Aliquam in hendrerit urna.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end mb-10">
+                                                        <div class="d-flex flex-column align-items-end">
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                <div class="me-3">
+                                                                    <span class="text-muted fs-7 mb-1">04.36</span>
+                                                                    <a href="#"
+                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">Pasien
+                                                                        A</a>
+                                                                </div>
+                                                                <div class="symbol symbol-35px symbol-circle">
+                                                                    <img alt="Pic"
+                                                                        src="/demo42/dist/assets/media/avatars/300-1.jpg" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end"
+                                                                data-kt-element="message-text">Lorem ipsum dolor sit
+                                                                amet, consectetur adipiscing elit. Ut et massa mi.
+                                                                Aliquam in hendrerit urna.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end mb-10 d-none"
+                                                        data-kt-element="template-out">
+                                                        <div class="d-flex flex-column align-items-end">
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                <div class="me-3">
+                                                                    <span class="text-muted fs-7 mb-1">13.48</span>
+                                                                    <a href="#"
+                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">Pasien
+                                                                        A</a>
+                                                                </div>
+                                                                <div class="symbol symbol-35px symbol-circle">
+                                                                    <img alt="Pic"
+                                                                        src="/demo42/dist/assets/media/avatars/300-1.jpg" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end"
+                                                                data-kt-element="message-text"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-start mb-10 d-none"
+                                                        data-kt-element="template-in">
+                                                        <div class="d-flex flex-column align-items-start">
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                <div class="symbol symbol-35px symbol-circle">
+                                                                    <img alt="Pic"
+                                                                        src="/demo42/dist/assets/media/avatars/dokter.jpg" />
+                                                                </div>
+                                                                <div class="ms-3">
+                                                                    <a href="#"
+                                                                        class="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Dr.
+                                                                        Agus Rivero, Sp.THT</a>
+                                                                    <span class="text-muted fs-7 mb-1">13.48</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start"
+                                                                data-kt-element="message-text">Right before vacation
+                                                                season we have the next Big Deal for you.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer py-5 d-flex justify-content-center align-items-center"
+                                                id="kt_chat_messenger_footer">
+                                                <h5 class="mb-0 me-3">Beri ulasan konsultasi ini:</h5>
+                                                <button
+                                                    class="btn btn-sm btn-icon btn-circle btn-light btn-light-success px-4 me-2"
+                                                    type="button" data-kt-element="send">
+                                                    <i class="bi bi-hand-thumbs-up fs-3"></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-sm btn-icon btn-circle btn-light btn-light-danger px-4"
+                                                    type="button" data-kt-element="send">
+                                                    <i class="bi bi-hand-thumbs-down fs-3"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
